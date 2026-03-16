@@ -1,18 +1,24 @@
-# augmented-reality — Claude Notes
+# augmented-reality
 
-## Overview
-TODO: Add project overview.
+ARKit-based AR app in Swift.
 
-## Dev
+## Architecture
+
+- `Sources/App.swift` -- App entry point
+- `Sources/ARViewContainer.swift` -- ARView wrapped for SwiftUI
+- `Sources/PlaneDetection.swift` -- Horizontal/vertical plane detection
+- `Sources/ObjectPlacement.swift` -- 3D object placement on surfaces
+- `Sources/GestureHandler.swift` -- Tap, drag, pinch gestures
+
+## Build
+
 ```bash
-cd ~/Documents/Code/augmented-reality
-# add dev command
+xcodegen generate
+xcodebuild -scheme augmented-reality -destination 'platform=iOS Simulator,name=iPhone 17 Pro'
 ```
 
-## Deploy
-```bash
-git push origin main
-```
+## Conventions
 
-## Status
-In development.
+- SwiftUI + RealityKit
+- iOS 17+, @Observable
+- xcodegen for project generation
